@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GPS 위치 권한"
+        android:textColor="#673AB7"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="232dp"
+        app:srcCompat="@android:drawable/ic_menu_mylocation"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="61dp"
+        android:layout_height="56dp"
+        app:srcCompat="@android:drawable/ic_menu_mylocation"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="223dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="61dp"
+        android:layout_height="56dp"
+        app:srcCompat="@android:drawable/ic_menu_more"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="357dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WI-FI 위치 권한"
+        android:textColor="#673AB7"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="367dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="65dp"
+        android:layout_height="71dp"
+        app:srcCompat="@android:drawable/ic_menu_info_details"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="60dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="315dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="이 앱의 실행을 위한 권한이 필요합니다."
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="73dp"
+        tools:ignore="MissingConstraints"
+        android:gravity="center_horizontal" />
+
+    <CheckBox
+        android:id="@+id/cbFine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="동의함"
+        tools:layout_editor_absoluteX="299dp"
+        tools:layout_editor_absoluteY="234dp"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/cbCoarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="동의함"
+        tools:layout_editor_absoluteX="299dp"
+        tools:layout_editor_absoluteY="367dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="146dp"
+        android:layout_height="44dp"
+        android:text="취소"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="529dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/okBtn"
+        android:layout_width="157dp"
+        android:layout_height="43dp"
+        android:text="확인"
+        tools:layout_editor_absoluteX="194dp"
+        tools:layout_editor_absoluteY="529dp"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

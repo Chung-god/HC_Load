@@ -1,7 +1,5 @@
 package com.company.hc_load;
 
-import android.content.Intent;
-import android.os.AsyncTask;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -10,16 +8,12 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Dictionary;
-
-import javax.xml.transform.Result;
 
 class storeInfo{
     public String longitude = null; //경도  X
@@ -31,7 +25,7 @@ class storeInfo{
 
 
     storeInfo(JSONObject data){
-        try {
+            try {
             longitude = data.getString("lon");
             latitude = data.getString("lat");
             storeName = data.getString("bizesNm");
@@ -67,9 +61,7 @@ public class Task{
     storeInfo b;
     storeInfo c;
 
-
-
-    public Object Task(final String place,final int number){
+    Task(final String place){
         Thread mThread = new Thread(){
             Double cx =cxNampo;
             Double cy = cyNampo;
@@ -124,20 +116,16 @@ public class Task{
         try {
             mThread.join();
             placejsonParser(receiveMsg);
-            if(number.equals(1)) {
-                return SelectCourse(storeInfoArr);
-            }
-            if(number.equals(2)) {
-                return SelectCourse(playInfoArr);
-            }
-            if(number.equals(3)){
-                return SelectCourse(cafeInfoArr);
-            }
+
+            a = SelectCourse(storeInfoArr);
+            b = SelectCourse(playInfoArr);
+            c = SelectCourse(cafeInfoArr);
+
 
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-       // return receiveMsg;
+        //return receiveMsg;
     }
 
 
