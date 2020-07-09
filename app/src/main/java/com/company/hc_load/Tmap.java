@@ -27,23 +27,27 @@ public class Tmap {
     public int distance1;
     public int time2;
     public int distance2;
+    public int time3;
+    public int distance3;
 
     final private String appkey = "l7xx10772ddf0cda4d6faf1bd54eba44d066";
     private String receiveMsg = "";
 
-    Tmap(final double x1, final double y1, final double x2, final double y2, final double x3, final double y3) {
+    Tmap(final double x1, final double y1, final double x2, final double y2, final double x3, final double y3, final double x4, final double y4) {
         route(x1,y1, x2, y2, 1); // 경로 1~2 사이 거리/시간 구하기
-        route(x1,y1, x2, y2, 2); // 경로 2~3 사이 거리/시간 구하기
+        route(x2,y2, x3, y3, 2); // 경로 2~3 사이 거리/시간 구하기
+        route(x3,y3, x4, y4, 3); // 경로 3~4 사이 거리/시간 구하기
         Thread mThread = new Thread() {
             @Override
             public void run() {
                 try {
                     URL url = new URL("https://apis.openapi.sk.com/tmap/routeStaticMap?appKey=" + appkey
-                            + "&endX=" + Double.toString(x3)
-                            + "&endY=" + Double.toString(y3)
+                            + "&endX=" + Double.toString(x4)
+                            + "&endY=" + Double.toString(y4)
                             + "&startX=" + Double.toString(x1)
                             + "&startY=" + Double.toString(y1)
                             + "&passList=" + Double.toString(x2) + "," + Double.toString(y2)
+                            + "_"  + Double.toString(x3) + "," + Double.toString(y3)
                             + "&version=1");
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setDoInput(true); // 서버로 부터 응답 수신
@@ -126,8 +130,9 @@ public class Tmap {
                 distance2 = jarray.getInt("totalDistance");
                 time2 = jarray.getInt("totalTime");
             }
-            else{
-
+            else if(type == 3){
+                distance3 = jarray.getInt("totalDistance");
+                time3 = jarray.getInt("totalTime");
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
